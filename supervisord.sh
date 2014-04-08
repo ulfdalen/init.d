@@ -22,7 +22,13 @@ DESC="Description of the service"
 NAME=supervisord
 DAEMON=/usr/local/bin/supervisord
 DAEMON_ARGS="-c /etc/supervisor/supervisord.conf"
-PIDFILE=/var/run/$NAME.pid
+#For default config
+if [ -f /tmp/$NAME.pid ]
+then
+    PIDFILE=/tmp/$NAME.pid
+else
+    PIDFILE=/var/run/$NAME.pid
+fi
 SCRIPTNAME=/etc/init.d/$NAME
  
 # Exit if the package is not installed
