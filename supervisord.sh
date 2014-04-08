@@ -21,7 +21,7 @@ PATH=/sbin:/usr/sbin:/bin:/usr/bin
 DESC="Description of the service"
 NAME=supervisord
 DAEMON=/usr/local/bin/supervisord
-DAEMON_ARGS="-c /etc/supervisor/supervisord.conf"
+DAEMON_ARGS="-c /etc/supervisord.conf"
 #For default config
 if [ -f /tmp/$NAME.pid ]
 then
